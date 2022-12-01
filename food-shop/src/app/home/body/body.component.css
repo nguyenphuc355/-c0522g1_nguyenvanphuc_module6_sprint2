@@ -7,11 +7,23 @@ section {
   display: inline-block;
   padding: .8rem 3rem;
   font-size: 20px;
-  border-radius: .5rem;
   border: 2px solid black;
   color: black;
   cursor: pointer;
   background: none;
+}
+
+.btn-card {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: .3rem 1rem;
+  font-size: 15px;
+  border: 1px solid black;
+  color: black;
+  cursor: pointer;
+  background: none;
+  margin-bottom: 10px;
+
 }
 
 .btn:hover {
@@ -22,7 +34,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("src/assets/image/pexels-photo-616401.jpeg");
+  background-image: url("https://media.istockphoto.com/id/1134717299/photo/healthy-food-concept-with-fresh-vegetables-and-ingredients-for-cooking.jpg?b=1&s=170667a&w=0&k=20&c=GGqHf625UB2B_GbBGHOrhdaxasaSjcJlyC5FYlvBAn8=");
   background-size: cover;
   padding-top: 17rem;
   padding-bottom: 10rem;
@@ -45,10 +57,6 @@ section {
 
 }
 
-.card-grid .card {
-  box-shadow: 0 8px 15px lightblue;
-}
-
 :root {
   --background-dark: #2d3548;
   --text-light: rgba(255, 255, 255, 0.6);
@@ -69,37 +77,22 @@ section {
   padding: var(--spacing-xxl) var(--spacing-l);
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-column-gap: var(--spacing-l);
-  grid-row-gap: var(--spacing-l);
-  max-width: var(--width-container);
-  width: 100%;
-}
-
-@media (min-width: 540px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 960px) {
-  .card-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 .card {
   list-style: none;
   position: relative;
   margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: .5s ease;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  transform: translateY(-30px);
 }
 
 .card:before {
   content: '';
   display: block;
-  padding-bottom: 150%;
   width: 100%;
 }
 
@@ -119,35 +112,6 @@ section {
   transform 200ms linear;
 }
 
-.card:hover .card__background {
-  transform: scale(1.05) translateZ(0);
-}
-
-.card-grid:hover > .card:not(:hover) .card__background {
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
-}
-
-.card__content {
-  left: 0;
-  padding: var(--spacing-l);
-  position: absolute;
-  top: 0;
-}
-
-.card__category {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  margin-bottom: var(--spacing-s);
-  text-transform: uppercase;
-}
-
-.card__heading {
-  color: var(--text-lighter);
-  font-size: 1.9rem;
-  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-  line-height: 1.4;
-  word-spacing: 100vw;
-}
 
 * {
   margin: 0;
@@ -214,13 +178,6 @@ body {
 }
 
 /* Legend */
-.legend {
-  border: 500px solid transparent;
-  border-left: 800px solid rgba(52, 73, 94, .7);
-  border-bottom: 0;
-  position: absolute;
-  bottom: 0;
-}
 
 /* Contents */
 .content {

@@ -2,3 +2,6 @@
   right: 2rem;
   transition: .4s linear;
 }
+body{
+  overflow-x: hidden;
+}
