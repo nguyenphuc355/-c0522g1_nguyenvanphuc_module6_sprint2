@@ -1,18 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {IFood} from '../../model/i-food';
-import {Router} from '@angular/router';
-import {Title} from '@angular/platform-browser';
 import {FoodService} from '../../service/food.service';
+import {Title} from '@angular/platform-browser';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-body',
-  templateUrl: './body.component.html',
-  styleUrls: ['./body.component.css']
+  selector: 'app-other',
+  templateUrl: './other.component.html',
+  styleUrls: ['./other.component.css']
 })
-export class BodyComponent implements OnInit {
+export class OtherComponent implements OnInit {
 
-  pageSize = 8;
+  pageSize = 4;
   foodList$: Observable<IFood[]> | undefined;
   total$: Observable<number>;
   nameSearch = '';
@@ -31,7 +31,7 @@ export class BodyComponent implements OnInit {
     this.paginate(this.nameSearch, this.pageSize);
   }
   paginate(nameSearch, pageSize) {
-    this.foodService.findAllFood(nameSearch, pageSize).subscribe(data => {
+    this.foodService.getOther(nameSearch, pageSize).subscribe(data => {
       console.log(data);
       if (data != null) {
         this.action = true;
@@ -51,4 +51,5 @@ export class BodyComponent implements OnInit {
   resetSearchInput(): void {
     this.nameSearch = '';
   }
+
 }

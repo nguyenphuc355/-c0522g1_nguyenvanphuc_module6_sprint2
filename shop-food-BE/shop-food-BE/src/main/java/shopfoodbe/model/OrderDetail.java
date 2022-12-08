@@ -5,7 +5,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-public class FoodCustomer {
+public class OrderDetail {
+
+    private String datePayment;
+    private int quantity;
     @Id
     @ManyToOne
     @JoinColumn(name = "id_customer", referencedColumnName = "id")
@@ -19,10 +22,18 @@ public class FoodCustomer {
     @Column(name = "is_delete")
     private boolean isDelete;
 
-    public FoodCustomer() {
+    public OrderDetail() {
     }
 
-    public FoodCustomer(Customer customer, Food food, boolean isDelete) {
+    public OrderDetail(String datePayment, int quantity, Customer customer, Food food, boolean isDelete) {
+        this.datePayment = datePayment;
+        this.quantity = quantity;
+        this.customer = customer;
+        this.food = food;
+        this.isDelete = isDelete;
+    }
+
+    public OrderDetail(Customer customer, Food food, boolean isDelete) {
         this.customer = customer;
         this.food = food;
         this.isDelete = isDelete;
@@ -50,5 +61,21 @@ public class FoodCustomer {
 
     public void setDelete(boolean delete) {
         isDelete = delete;
+    }
+
+    public String getDatePayment() {
+        return datePayment;
+    }
+
+    public void setDatePayment(String datePayment) {
+        this.datePayment = datePayment;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

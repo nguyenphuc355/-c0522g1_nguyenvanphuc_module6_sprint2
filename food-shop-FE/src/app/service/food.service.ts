@@ -12,17 +12,33 @@ export class FoodService {
 
   constructor(private httpClient: HttpClient) {
   }
-
-  getFoodList(page: number, size: number, name: string): Observable<SearchResult<IFood>> {
-    return this.httpClient.get<SearchResult<IFood>>
-    (environment.api_url + '/list?name=' + name + '&page=' + (page - 1) + '&size=' + size);
-  }
-
   findAllFood(name: string, size: number): Observable<SearchResult<IFood>> {
     const API_URL = environment.api_url + '/list?name=' + name + '&size=' + size;
     console.log(API_URL);
     return this.httpClient.get<SearchResult<IFood>>(API_URL);
   }
+  getVegetable(name: string, size: number): Observable<SearchResult<IFood>> {
+    const API_URL = environment.api_url + '/vegetable?name=' + name + '&size=' + size;
+    console.log(API_URL);
+    return this.httpClient.get<SearchResult<IFood>>(API_URL);
+  }
+  getAllMeat(name: string, size: number): Observable<SearchResult<IFood>> {
+    const API_URL = environment.api_url + '/meat?name=' + name + '&size=' + size;
+    console.log(API_URL);
+    return this.httpClient.get<SearchResult<IFood>>(API_URL);
+  }
+  getAllFruit(name: string, size: number): Observable<SearchResult<IFood>> {
+    const API_URL = environment.api_url + '/fruit?name=' + name + '&size=' + size;
+    console.log(API_URL);
+    return this.httpClient.get<SearchResult<IFood>>(API_URL);
+  }
+
+  getOther(name: string, size: number): Observable<SearchResult<IFood>> {
+    const API_URL = environment.api_url + '/other?name=' + name + '&size=' + size;
+    console.log(API_URL);
+    return this.httpClient.get<SearchResult<IFood>>(API_URL);
+  }
+
 
   getFoodById(id: number): Observable<IFood> {
     return this.httpClient.get<IFood>(environment.api_url + '/' + id);

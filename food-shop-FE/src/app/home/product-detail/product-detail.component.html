@@ -1,23 +1,24 @@
-<div id="detail">
-  <section class="buy">
-    <div class="product-image me-3">
+<div id="detail" class="mb-2">
+  <section class="buy row">
+    <div class="product-image me-3 ">
       <img src="{{food.image}}" height="500" width="500">
     </div>
-    <div class="product-info">
-      <h1>{{food.name}}</h1>
+    <div class="product-info mb-5">
+      <h2>{{food.name}}</h2>
       <hr>
-      <h2>-{{food.status}}</h2>
-      <h2>-{{food.manufacturing}}</h2>
-      <h2>-{{food.price}}</h2>
+      <h4>-Trạng thái: {{food.status}}</h4>
+      <h4>-Xuất xứ: {{food.manufacturing}}</h4>
+      <h3>-Giá: {{food.price}}</h3>
       <button type="button">Thêm vào giỏ hàng</button>
       <button type="button">Mua sản phẩm</button>
     </div>
-  </section>
-<div class="col-lg-6">
-  <section class="details" style="text-align: justify; font-size: 20px">
-    <div class="product-description">
-      <p>{{food.content}}</p>
-    </div>
+      <section class="details" style="text-align: justify; font-size: 20px">
+        <div class="product-description">
+          <span>Thông Tin: </span>
+          <p>- {{food.content}}</p>
+        </div>
+      </section>
   </section>
 </div>
-</div>
+;
+/;

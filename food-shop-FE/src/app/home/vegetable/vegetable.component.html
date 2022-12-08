@@ -74,10 +74,10 @@
 <div class="text-center pt-3">
   <h1 class="text-danger">Sản Phẩm </h1>
   <div class="pe-3 nav justify-content-end row">
-    <div class="col-lg-9 nav justify-content-start ps-5 select ">
+    <div class="col-lg-9 nav justify-content-start ps-5 select">
       <a id="food-all" routerLink="/"><span>Tất cả</span></a>
       <a id="vegetable" routerLink="/vegetable"><span class="ps-4">Rau củ</span></a>
-      <a id="meat" routerLink="/meat"><span class="ps-4">Thịt</span></a>
+      <a id="meat"  routerLink="/meat"><span class="ps-4">Thịt</span></a>
       <a id="fruit" routerLink="/fruit"><span class="ps-4">Hoa quả</span></a>
       <a id="other" routerLink="/other"><span class="ps-4">khác</span></a>
     </div>
@@ -109,7 +109,7 @@
   </div>
   <div class="row">
     <div style="margin-left: 700px">
-      <button class="btns btn-primary btn-card" *ngIf="pageSize <= (total$|async)" (click)="nextPage()">Xem thêm</button>
+      <button class="btns btn-primary btn-card"(click)="nextPage()">Xem thêm</button>
     </div>
   </div>
 </div>

@@ -10,17 +10,25 @@
   <div class="noi-dung">
     <div class="form">
       <h2>Trang Đăng Nhập</h2>
-      <form action="">
+      <form  [formGroup] = "formGroup" (ngSubmit)="onSubmit()">
         <div class="input-form">
+          <span class="text-danger"
+                *ngIf="formGroup.controls.username.hasError('required')
+                  && formGroup.controls.username.dirty">
+            Vui lòng nhập tài khoản !</span>
           <span>Tên Người Dùng</span>
-          <input type="text" name="">
+          <input type="text" formControlName="username">
         </div>
         <div class="input-form">
+            <span class="text-danger"
+                  *ngIf="formGroup.controls.password.hasError('required')
+                  && formGroup.controls.password.dirty">
+            Vui lòng nhập mật khẩu !</span>
           <span>Mật Khẩu</span>
-          <input type="password" name="">
+          <input type="password" formControlName="password" >
         </div>
         <div class="nho-dang-nhap">
-          <label><input type="checkbox" name=""> Nhớ Đăng Nhập</label>
+          <label><input type="checkbox" formControlName="rememberMe" checked="checked"> Nhớ Đăng Nhập</label>
         </div>
         <div class="input-form">
           <input type="submit" value="Đăng Nhập">
