@@ -3,44 +3,44 @@ package shopfoodbe.model;
 import javax.persistence.*;
 
 @Entity
-public class Customer {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
-    private String dayOfBirth;
-    private int gender;
-    private String idCard;
+    private Integer gender;
     private String email;
     private String address;
     private String phoneNumber;
+    private String birthDay;
+    private String idCard;
+    private boolean isDelete;
+
     @OneToOne
     @JoinColumn(name = "username", referencedColumnName = "username")
     private User user;
 
-
-    public Customer() {
+    public Employee() {
     }
 
-    public Customer(int id, String name, String dayOfBirth, int gender, String idCard, String email, String address, String phoneNumber, User user) {
+    public Employee(Integer id, String name, Integer gender, String email, String address, String phoneNumber, String birthDay, String idCard, boolean isDelete, User user) {
         this.id = id;
         this.name = name;
-        this.dayOfBirth = dayOfBirth;
         this.gender = gender;
-        this.idCard = idCard;
         this.email = email;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.birthDay = birthDay;
+        this.idCard = idCard;
+        this.isDelete = isDelete;
         this.user = user;
     }
 
-
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -52,28 +52,12 @@ public class Customer {
         this.name = name;
     }
 
-    public String getDayOfBirth() {
-        return dayOfBirth;
-    }
-
-    public void setDayOfBirth(String dayOfBirth) {
-        this.dayOfBirth = dayOfBirth;
-    }
-
-    public int getGender() {
+    public Integer getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(Integer gender) {
         this.gender = gender;
-    }
-
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
     }
 
     public String getEmail() {
@@ -98,6 +82,30 @@ public class Customer {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getBirthDay() {
+        return birthDay;
+    }
+
+    public void setBirthDay(String birthDay) {
+        this.birthDay = birthDay;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public boolean isDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        isDelete = delete;
     }
 
     public User getUser() {

@@ -1,9 +1,6 @@
 package shopfoodbe.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 
@@ -17,10 +14,23 @@ public class Food {
     private String content;
     private String price;
     private String image;
-
+    @ManyToOne
+    @JoinColumn(name = "food_type_id", referencedColumnName = "id")
+    private FoodType foodType;
     private boolean isDelete;
 
     public Food() {
+    }
+
+    public Food(int id, String name, String status, String manufacturing, String content, String price, String image, boolean isDelete) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+        this.manufacturing = manufacturing;
+        this.content = content;
+        this.price = price;
+        this.image = image;
+        this.isDelete = isDelete;
     }
 
     public Food(int id, String name, String status, String manufacturing, String content, String price, String image) {
@@ -87,5 +97,13 @@ public class Food {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public boolean isDelete() {
+        return isDelete;
+    }
+
+    public void setDelete(boolean delete) {
+        isDelete = delete;
     }
 }

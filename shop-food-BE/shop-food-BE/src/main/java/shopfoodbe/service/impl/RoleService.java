@@ -1,10 +1,10 @@
-package shopfoodbe.service.impl.impl;
+package shopfoodbe.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import projectbackend.model.decentralization.Role;
-import projectbackend.repository.decentralization.IRoleRepository;
-import projectbackend.service.decentralization.IRoleService;
+import shopfoodbe.model.Role;
+import shopfoodbe.repository.IRoleRepository;
+import shopfoodbe.service.IRoleService;
 
 import java.util.List;
 

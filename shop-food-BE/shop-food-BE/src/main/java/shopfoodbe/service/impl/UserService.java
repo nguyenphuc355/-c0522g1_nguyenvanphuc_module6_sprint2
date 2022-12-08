@@ -1,14 +1,14 @@
-package shopfoodbe.service.impl.impl;
+package shopfoodbe.service.impl;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import projectbackend.dto.decentralization.IUserEmailDto;
-import projectbackend.model.decentralization.User;
-import projectbackend.repository.decentralization.IUserRepository;
-import projectbackend.service.decentralization.IUserService;
+import shopfoodbe.dto.IUserEmailDto;
+import shopfoodbe.model.User;
+import shopfoodbe.repository.IUserRepository;
+import shopfoodbe.service.IUserService;
 
 import java.util.List;
 import java.util.Optional;

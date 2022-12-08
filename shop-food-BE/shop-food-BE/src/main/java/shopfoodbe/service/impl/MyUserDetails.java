@@ -1,10 +1,10 @@
-package shopfoodbe.service.impl.impl;
+package shopfoodbe.service.impl;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import projectbackend.model.decentralization.Role;
-import projectbackend.model.decentralization.User;
+import shopfoodbe.model.Role;
+import shopfoodbe.model.User;
 
 import java.util.ArrayList;
 import java.util.Collection;

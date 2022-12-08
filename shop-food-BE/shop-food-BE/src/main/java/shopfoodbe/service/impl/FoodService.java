@@ -9,7 +9,6 @@ import shopfoodbe.model.Food;
 import shopfoodbe.repository.IFoodRepository;
 import shopfoodbe.service.IFoodService;
 
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -25,6 +24,26 @@ public class FoodService implements IFoodService {
     @Override
     public Optional<Food> findFoodById(int id) {
         return foodRepository.findFoodById(id);
+    }
+
+    @Override
+    public Page<IFoodDto> findVegetable(String name, Pageable pageable) {
+        return foodRepository.findVegetable(name, pageable);
+    }
+
+    @Override
+    public Page<IFoodDto> findAllMeat(String name, Pageable pageable) {
+        return foodRepository.findAllMeat(name, pageable);
+    }
+
+    @Override
+    public Page<IFoodDto> findAllFruit(String name, Pageable pageable) {
+        return foodRepository.findAllFruit(name, pageable);
+    }
+
+    @Override
+    public Page<IFoodDto> findOther(String name, Pageable pageable) {
+        return foodRepository.findOther(name, pageable);
     }
 
 

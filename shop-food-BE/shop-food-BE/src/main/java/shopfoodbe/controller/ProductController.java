@@ -4,7 +4,6 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +25,42 @@ public class ProductController {
     public ResponseEntity<Page<IFoodDto>> getAllFood(@RequestParam(value = "name", defaultValue = "") String name,
                                                      Pageable pageable) {
         Page<IFoodDto> foodDto = foodService.findAllFood(name, pageable);
+        if (foodDto.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(foodDto,HttpStatus.OK);
+    }
+    @GetMapping(value = "/vegetable")
+    public ResponseEntity<Page<IFoodDto>> getVegetable(@RequestParam(value = "name", defaultValue = "") String name,
+                                                     Pageable pageable) {
+        Page<IFoodDto> foodDto = foodService.findVegetable(name, pageable);
+        if (foodDto.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(foodDto,HttpStatus.OK);
+    }
+    @GetMapping(value = "/meat")
+    public ResponseEntity<Page<IFoodDto>> getAllMeat(@RequestParam(value = "name", defaultValue = "") String name,
+                                                     Pageable pageable) {
+        Page<IFoodDto> foodDto = foodService.findAllMeat(name, pageable);
+        if (foodDto.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(foodDto,HttpStatus.OK);
+    }
+    @GetMapping(value = "/fruit")
+    public ResponseEntity<Page<IFoodDto>> getAllFruit(@RequestParam(value = "name", defaultValue = "") String name,
+                                                     Pageable pageable) {
+        Page<IFoodDto> foodDto = foodService.findAllFruit(name, pageable);
+        if (foodDto.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(foodDto,HttpStatus.OK);
+    }
+    @GetMapping(value = "/other")
+    public ResponseEntity<Page<IFoodDto>> getOther(@RequestParam(value = "name", defaultValue = "") String name,
+                                                     Pageable pageable) {
+        Page<IFoodDto> foodDto = foodService.findOther(name, pageable);
         if (foodDto.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
