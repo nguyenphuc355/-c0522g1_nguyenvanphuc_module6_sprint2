@@ -1,8 +1,5 @@
 package projectbackend.model.decentralization;
 
-import projectbackend.model.decentralization.Role;
-import projectbackend.model.decentralization.User;
-
 import javax.persistence.*;
 import java.io.Serializable;
 

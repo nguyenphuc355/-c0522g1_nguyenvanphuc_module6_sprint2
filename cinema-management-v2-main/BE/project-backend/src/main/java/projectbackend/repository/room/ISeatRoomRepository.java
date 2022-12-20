@@ -23,7 +23,7 @@ public interface ISeatRoomRepository extends JpaRepository<SeatRoom, Integer> {
     @Query(value = "SELECT " +
             "    seat_room.id AS id, " +
             "    seat.name AS seatName, " +
-            "    seat_type_id AS seatType, " +
+            "    seat_type_id AS seatTypeId, " +
             "    seat_type.name AS seatTypeName " +
             "FROM " +
             "    seat_room " +

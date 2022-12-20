@@ -6,6 +6,7 @@ import {Title} from '@angular/platform-browser';
 import {FoodService} from '../../service/food.service';
 import {CartDto} from '../../dto/cart-dto';
 import Swal from 'sweetalert2';
+import {TokenStorageService} from '../../service/token-storage.service';
 
 @Component({
   selector: 'app-body',
@@ -22,9 +23,11 @@ export class BodyComponent implements OnInit {
   numberRecord = 0;
   content: boolean;
   totalRecord = 0;
+  username: string;
 
   constructor(private foodService: FoodService,
               private title: Title,
+              private tokenService: TokenStorageService,
               private router: Router) {
     this.title.setTitle('Trang chủ');
   }
@@ -37,6 +40,7 @@ export class BodyComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
+    this.getCustomer();
   }
 
   paginate(nameSearch, pageSize) {
@@ -61,15 +65,30 @@ export class BodyComponent implements OnInit {
     this.nameSearch = '';
   }
 
+  getCustomer(): void {
+    this.username = this.tokenService.getUser().username;
+  }
+
   addToCart(item: CartDto) {
-    this.foodService.updateCart(item).subscribe(() => {
+    if (this.username == null) {
       Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Thêm vào giỏ hàng thành công',
+        position: 'center',
+        icon: 'warning',
+        title: 'Bạn chưa đăng nhập, vui lòng đăng nhập trước !',
         showConfirmButton: false,
-        timer: 1500
+        timer: 2000
       });
-    });
+      this.router.navigateByUrl('/login');
+    } else {
+      this.foodService.updateCart(item).subscribe(() => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Thêm vào giỏ hàng thành công',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      });
+    }
   }
 }
