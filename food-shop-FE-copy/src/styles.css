@@ -1,0 +1,11 @@
+.header .search-form.active {
+  right: 2rem;
+  transition: .4s linear;
+}
+body{
+  overflow-x: hidden;
+  font-family: "Times New Roman";
+}
+button{
+  border-radius: 5px;
+}
