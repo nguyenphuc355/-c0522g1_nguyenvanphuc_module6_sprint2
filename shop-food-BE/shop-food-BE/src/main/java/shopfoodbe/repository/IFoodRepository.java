@@ -22,15 +22,15 @@ public interface IFoodRepository extends JpaRepository<Food, Integer> {
     @Query(value = "select * from food where id=:id and is_delete=0", nativeQuery = true)
     Optional<Food> findFoodById(@Param("id") int id);
 
-    @Query(value = "select * from food where food_type_id = 1",nativeQuery = true)
+    @Query(value = "select * from food where food_type_id = 1 and name like %:nameSearch% and is_delete=0",nativeQuery = true)
     Page<IFoodDto> findVegetable(@Param("nameSearch") String name, Pageable pageable);
 
-    @Query(value = "select * from food where food_type_id = 2",nativeQuery = true)
+    @Query(value = "select * from food where food_type_id = 2 and name like %:nameSearch% and is_delete=0",nativeQuery = true)
     Page<IFoodDto> findAllMeat(@Param("nameSearch") String name, Pageable pageable);
 
-    @Query(value = "select * from food where food_type_id = 3",nativeQuery = true)
+    @Query(value = "select * from food where food_type_id = 3  and name like %:nameSearch% and is_delete=0",nativeQuery = true)
     Page<IFoodDto> findAllFruit(@Param("nameSearch") String name, Pageable pageable);
 
-    @Query(value = "select * from food where food_type_id = 4",nativeQuery = true)
+    @Query(value = "select * from food where food_type_id = 4 and name like %:nameSearch% and is_delete=0",nativeQuery = true)
     Page<IFoodDto> findOther(@Param("nameSearch") String name, Pageable pageable);
 }
