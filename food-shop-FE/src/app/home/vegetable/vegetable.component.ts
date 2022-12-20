@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {IFood} from '../../model/i-food';
 import {FoodService} from '../../service/food.service';
 import {Title} from '@angular/platform-browser';
 import {Router} from '@angular/router';
+import {CartDto} from '../../dto/cart-dto';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-vegetable',
@@ -30,6 +32,7 @@ export class VegetableComponent implements OnInit {
   ngOnInit(): void {
     this.paginate(this.nameSearch, this.pageSize);
   }
+
   paginate(nameSearch, pageSize) {
     this.foodService.getVegetable(nameSearch, pageSize).subscribe(data => {
       console.log(data);
@@ -52,4 +55,15 @@ export class VegetableComponent implements OnInit {
     this.nameSearch = '';
   }
 
+  addToCart(item: CartDto) {
+    this.foodService.updateCart(item).subscribe(() => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Thêm vào giỏ hàng thành công',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    });
+  }
 }

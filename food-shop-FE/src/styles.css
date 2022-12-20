@@ -6,3 +6,6 @@ body{
   overflow-x: hidden;
   font-family: "Times New Roman";
 }
+button{
+  border-radius: 5px;
+}

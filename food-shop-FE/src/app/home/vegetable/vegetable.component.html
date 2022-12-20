@@ -71,6 +71,7 @@
   </div>
 </div>
 <!-----------------slide end------------------>
+
 <div class="text-center pt-3">
   <h1 class="text-danger">Sản Phẩm </h1>
   <div class="pe-3 nav justify-content-end row">
@@ -95,6 +96,20 @@
   <hr>
 </div>
 <!----------------card start---------------------->
+<div *ngIf="!action">
+  <div class="wrapper">
+    <!-- MAIN -->
+    <div class="container" data-text="204">
+      <div class="title glitch" data-text="204">
+        204!
+      </div>
+      <div class="description glitch" data-text="SORRY, PRODUCT NOT EXITS !!!">
+        SORRY, PRODUCT NOT EXITS !!!
+      </div>
+    </div>
+    <!-- END MAIN -->
+  </div>
+</div>
 <div>
   <div class="row mt-5 mb-5 nav justify-content-center" *ngIf="action">
     <div class="card " style="width: 18rem;" *ngFor="let item of (foodList$ |async)">
@@ -103,13 +118,13 @@
         <h5 class="card-title"><b>{{item.name | uppercase}}</b></h5>
         <div class="card-text p-0">{{item.status}}</div>
         <div class="card-text p-0">{{item.price}}</div>
-        <a href="#" class="btns btn-primary btn-card ">Thêm vào giỏ hàng</a>
+        <a (click)="addToCart(item)" class="btns btn-primary btn-card ">Thêm vào giỏ hàng</a>
       </div>
     </div>
   </div>
   <div class="row">
     <div style="margin-left: 700px">
-      <button class="btns btn-primary btn-card"(click)="nextPage()">Xem thêm</button>
+      <button class="btns btn-primary btn-card" *ngIf="pageSize <= (total$|async)" (click)="nextPage()">Xem thêm</button>
     </div>
   </div>
 </div>

@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {IFood} from '../../model/i-food';
-import {Router} from '@angular/router';
+import {NavigationEnd, Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 import {FoodService} from '../../service/food.service';
+import {CartDto} from '../../dto/cart-dto';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-body',
@@ -15,8 +17,8 @@ export class BodyComponent implements OnInit {
   pageSize = 8;
   foodList$: Observable<IFood[]> | undefined;
   total$: Observable<number>;
-  nameSearch = '';
   action: boolean;
+  nameSearch = '';
   numberRecord = 0;
   content: boolean;
   totalRecord = 0;
@@ -29,7 +31,14 @@ export class BodyComponent implements OnInit {
 
   ngOnInit(): void {
     this.paginate(this.nameSearch, this.pageSize);
+    this.router.events.subscribe((event) => {
+      if (!(event instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
   }
+
   paginate(nameSearch, pageSize) {
     this.foodService.findAllFood(nameSearch, pageSize).subscribe(data => {
       console.log(data);
@@ -50,5 +59,17 @@ export class BodyComponent implements OnInit {
 
   resetSearchInput(): void {
     this.nameSearch = '';
+  }
+
+  addToCart(item: CartDto) {
+    this.foodService.updateCart(item).subscribe(() => {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Thêm vào giỏ hàng thành công',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    });
   }
 }

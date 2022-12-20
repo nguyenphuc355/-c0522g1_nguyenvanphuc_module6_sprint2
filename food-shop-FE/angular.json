@@ -26,9 +26,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "src/custom.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -92,7 +90,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         },
         "lint": {
@@ -121,6 +120,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "food-shop"
 }
