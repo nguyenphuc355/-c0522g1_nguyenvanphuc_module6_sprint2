@@ -1,0 +1,133 @@
+<!-----------------slide start------------------>
+<div class="row" style="overflow-y: hidden;padding-top:100px;font-family: 'Times New Roman',serif">
+  <!-- Slider -->
+  <div id="slider">
+    <div class="slides">
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Uy Tín</h1>
+            <h2>Tại đây chuyên cung cấp những loại thịt bò, hải sản tươi sống cùng các loại trái cây tươi sạch nhập khẩu
+              từ những nước có tiêu chuẩn vệ sinh an toàn thực phẩm vô cùng khắt khe như Úc, Mỹ.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://cdn.britannica.com/17/196817-050-6A15DAC3/vegetables.jpg">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Chất Lượng</h1>
+            <h2> mục tiêu cung ứng cho gia đình bạn những bữa cơm trọn vẹn, đầy đủ chất dinh dưỡng và an toàn sức khỏe
+              trong gia đình.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://ychef.files.bbci.co.uk/976x549/p04tx3m6.jpg">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Luôn Phát Triển</h1>
+            <h2>Luôn cố gắng phát triển và không ngừng cải thiện các dịch vụ giao dịch, thanh toán trực tuyến trong lĩnh
+              vực kinh doanh thực phẩm.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img
+            src="https://www.iberdrola.com/documents/20125/39904/real_food_746x419.jpg/0c9185fa-b2dd-e1a6-602c-bca55f68e54e?t=1626673209445">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Nổi Bật</h1>
+            <h2>Nổi bật nhất là các mặt hàng rau củ, trái cây luôn đảm bảo tươi ngon, không chất bảo quản và đầy đủ dinh
+              dưỡng. Ngoài ra, tại đây còn cung cấp những đặc sản vùng miền mà có thể bạn chưa được thưởng thức bao
+              giờ. </h2>
+          </div>
+        </div>
+        <div class="image">
+          <img
+            src="https://indochinalines.com/wp-content/uploads/2021/02/van-chuyen-hoa-qua-tu-ha-noi-di-ho-chi-minh.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="switch">
+      <ul>
+        <li>
+          <div class="on"></div>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-----------------slide end------------------>
+<div class="text-center pt-3">
+  <h1 class="text-danger">Sản Phẩm </h1>
+  <div class="pe-3 nav justify-content-end row">
+    <div class="col-lg-9 nav justify-content-start ps-5 select ">
+      <a id="food-all" routerLink="/"><span>Tất cả</span></a>
+      <a id="vegetable" routerLink="/vegetable"><span class="ps-4">Rau củ</span></a>
+      <a id="meat" routerLink="/meat"><span class="ps-4">Thịt</span></a>
+      <a id="fruit" routerLink="/fruit"><span class="ps-4">Hoa quả</span></a>
+      <a id="other" routerLink="/other"><span class="ps-4">khác</span></a>
+    </div>
+    <div class="header__search d-flex my-2 col-lg-3">
+      <span class="header__search-input-wrap">
+          <input class="form-control" type="text" placeholder="Tìm kiếm thực phẩm.." aria-label="Search"
+                 [(ngModel)]="nameSearch">
+      </span>
+      <button class="btn btn-light btn-outline-warning" (click)="resetSearchInput()">
+        <i class="fa-solid fa-xmark ps-2 pe-2"></i></button>
+      <button class="btn btn-light btn-outline-primary" (click)="paginate(nameSearch,pageSize)">
+        <i class="fa-solid fa-magnifying-glass ps-3 pe-3"></i></button>
+    </div>
+  </div>
+  <hr>
+</div>
+<!----------------card start---------------------->
+<div *ngIf="!action">
+  <div class="wrapper">
+    <!-- MAIN -->
+    <div class="container" data-text="204">
+      <div class="title glitch" data-text="204">
+        204!
+      </div>
+      <div class="description glitch" data-text="SORRY, PRODUCT NOT EXITS !!!">
+        SORRY, PRODUCT NOT EXITS !!!
+      </div>
+    </div>
+    <!-- END MAIN -->
+  </div>
+</div>
+<div>
+  <div class="row mt-5 mb-5 nav justify-content-center" *ngIf="action">
+    <div class="card " style="width: 18rem;" *ngFor="let item of (foodList$ |async)">
+      <a routerLink="/detail/{{item.id}}"><img src="{{item.image}}" class="card-img-top" alt="..." height="250"></a>
+      <div class="card-body text-center pt-2">
+        <h5 class="card-title"><b>{{item.name | uppercase}}</b></h5>
+        <div class="card-text p-0">{{item.status}}</div>
+        <div class="card-text p-0">{{item.price}}VND</div>
+        <a (click)="addToCart(item)" class="btns btn-primary btn-card ">Thêm vào giỏ hàng</a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div style="margin-left: 700px">
+      <button class="btns btn-primary btn-card" *ngIf="pageSize <= (total$|async)" (click)="nextPage()">Xem thêm
+      </button>
+    </div>
+  </div>
+</div>
+<!------------------------card end----------------------->
+
