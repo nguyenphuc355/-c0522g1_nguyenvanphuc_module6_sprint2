@@ -74,4 +74,7 @@ export class FoodService {
   payment(username: string): Observable<void> {
     return this.httpClient.get<void>(environment.api_url + '/payment/' + username);
   }
+  history(username: string): Observable<CartDto[]> {
+    return this.httpClient.get<CartDto[]>(environment.api_url + '/history/' + username);
+  }
 }
