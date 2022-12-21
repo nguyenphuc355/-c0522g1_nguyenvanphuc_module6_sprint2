@@ -89,6 +89,16 @@ public interface IFoodRepository extends JpaRepository<Food, Integer> {
     void deleteProduct(Integer id);
 
     @Modifying
-    @Query(value = "update order_detail set is_pay = 1 where id_customer =:customerId ",nativeQuery = true)
+    @Query(value = "update order_detail set is_pay = 1 where id_customer =:customerId ", nativeQuery = true)
     void payment(@Param("customerId") Integer customerId);
+
+    @Query(value = "select customer.name as customerName, food.name , " +
+            " order_detail.date_payment as datePayment, food.price as price, " +
+            "order_detail.quantity as quantity, food.image as image, " +
+            "(food.price * order_detail.quantity) as sumPerOne " +
+            "from order_detail " +
+            "join customer on order_detail.id_customer = customer.id " +
+            "join food on food.id = order_detail.id_food " +
+            "where username = :username and order_detail.is_delete = 0 and is_pay = 1 ", nativeQuery = true)
+    List<ICartDto> findAllHistory(@Param("username") String username);
 }

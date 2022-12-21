@@ -148,4 +148,13 @@ public class ProductController {
         foodService.payment(username);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/history/{username}")
+    public ResponseEntity<List<ICartDto>> showHistory(@PathVariable("username") String username) {
+        List<ICartDto> cartDtoList = foodService.findAllHistory(username);
+        if (cartDtoList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(cartDtoList, HttpStatus.OK);
+    }
 }

@@ -100,4 +100,9 @@ public class FoodService implements IFoodService {
         Customer customer = customerRepository.findByUsername(username);
         foodRepository.payment(customer.getId());
     }
+
+    @Override
+    public List<ICartDto> findAllHistory(String username) {
+        return foodRepository.findAllHistory(username);
+    }
 }

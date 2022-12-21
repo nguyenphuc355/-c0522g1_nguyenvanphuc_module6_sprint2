@@ -43,4 +43,5 @@ public interface IFoodService {
     IFoodDto findById(Integer id, String username);
 
     void payment(String username);
+    List<ICartDto> findAllHistory(String username);
 }
