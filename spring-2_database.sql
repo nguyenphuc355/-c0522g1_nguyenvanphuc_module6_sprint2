@@ -64,8 +64,7 @@ id_food int,
 is_delete bit default 0,
 is_pay bit default 0,
 foreign key(id_customer) references customer(id),
-foreign key(id_food) references food(id),
-primary key(id_customer, id_food)
+foreign key(id_food) references food(id)
 );
 
 create table if not exists employee(
