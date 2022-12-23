@@ -1,0 +1,663 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap");*/
+
+/*@font-face {*/
+/*  font-family: "FontAwesome";*/
+/*  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/fonts/fontawesome-webfont.eot?v=4.0.3");*/
+/*  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"),*/
+/*  url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"),*/
+/*  url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"),*/
+/*  url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");*/
+/*  font-weight: normal;*/
+/*  font-style: normal;*/
+/*}*/
+
+/** {*/
+/*  -webkit-box-sizing: border-box;*/
+/*  -moz-box-sizing: border-box;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*:after,*/
+/*:before {*/
+/*  -webkit-box-sizing: border-box;*/
+/*  -moz-box-sizing: border-box;*/
+/*  box-sizing: border-box;*/
+/*}*/
+
+/*body {*/
+/*  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+/*  font-family: Cantarell, sans-serif;*/
+/*  font-size: 18px;*/
+/*  line-height: 1.42857143;*/
+/*  background-color: #fff;*/
+/*  color: #505051;*/
+/*}*/
+
+/*p {*/
+/*  font-size: 18px;*/
+/*  line-height: 32px;*/
+/*}*/
+
+/*p {*/
+/*  margin: 0 0 12.5px;*/
+/*}*/
+
+/*a {*/
+/*  color: #428bca;*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*a:active,*/
+/*a:hover {*/
+/*  outline: 0;*/
+/*}*/
+
+/*a:focus,*/
+/*a:hover {*/
+/*  color: #2a6496;*/
+/*  text-decoration: underline;*/
+/*}*/
+
+/*a:hover {*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.visible-lg,*/
+/*.visible-md,*/
+/*.visible-sm,*/
+/*.visible-xs {*/
+/*  display: none !important;*/
+/*}*/
+
+/*.fa {*/
+/*  display: inline-block;*/
+/*  font-family: FontAwesome;*/
+/*  font-style: normal;*/
+/*  font-weight: 400;*/
+/*  line-height: 1;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  -moz-osx-font-smoothing: grayscale;*/
+/*}*/
+
+/*.fa-facebook:before {*/
+/*  content: "\f09a";*/
+/*}*/
+
+/*.fa-twitter:before {*/
+/*  content: "\f099";*/
+/*}*/
+
+/*.fa-pinterest:before {*/
+/*  content: "\f0d2";*/
+/*}*/
+
+/*.fa-youtube:before {*/
+/*  content: "\f167";*/
+/*}*/
+
+/*.fa-instagram:before {*/
+/*  content: "\f16d";*/
+/*}*/
+
+/*.fa-phone:before {*/
+/*  content: "\f095";*/
+/*}*/
+
+/*h2 {*/
+/*  line-height: normal;*/
+/*  font-size: 22px;*/
+/*  color: #056ba3;*/
+/*  font-family: "Open Sans", sans-serif;*/
+/*  font-weight: 600;*/
+/*  position: relative;*/
+/*  overflow: hidden;*/
+/*  margin: 25px auto 25px auto;*/
+/*}*/
+
+/*h2.centered,*/
+/*h2.text-center {*/
+/*  text-align: center;*/
+/*}*/
+
+/*h2.raligned,*/
+/*h2.text-right {*/
+/*  text-align: right;*/
+/*}*/
+
+/*h2 span {*/
+/*  display: inline-block;*/
+/*  vertical-align: baseline;*/
+/*  zoom: 1;*/
+/*  position: relative;*/
+/*  padding-right: 20px;*/
+/*}*/
+
+/*h2 span:after,*/
+/*h2 span:before {*/
+/*  content: "";*/
+/*  display: block;*/
+/*  width: 1200px;*/
+/*  position: absolute;*/
+/*  top: 0.73em;*/
+/*  border-top: 1px solid #dcdcdc;*/
+/*  border-top: thin solid #dcdcdc;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*}*/
+
+/*h2 span:before {*/
+/*  right: 100%;*/
+/*}*/
+
+/*h2 span:after {*/
+/*  left: 100%;*/
+/*}*/
+
+/*h2.centered span,*/
+/*h2.text-center span {*/
+/*  padding: 0 20px;*/
+/*}*/
+
+/*h2.raligned span,*/
+/*h2.text-right span {*/
+/*  padding-left: 20px;*/
+/*  padding-right: 0;*/
+/*}*/
+
+/*.btn {*/
+/*  font-family: Cantarell, sans-serif;*/
+/*  color: #fff !important;*/
+/*  font-size: 16px;*/
+/*  border-radius: 0;*/
+/*  text-transform: uppercase;*/
+/*  border: none;*/
+/*  min-width: 200px;*/
+/*  text-align: center;*/
+/*  padding: 4px 45px;*/
+/*  opacity: 1;*/
+/*  border-radius: 7px;*/
+/*  vertical-align: middle;*/
+/*  cursor: pointer;*/
+/*  display: inline-block;*/
+/*  line-height: 1.42857143;*/
+/*}*/
+
+/*.btn:focus,*/
+/*.btn:hover {*/
+/*  color: #333;*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.btn.active,*/
+/*.btn:active {*/
+/*  outline: 0;*/
+/*  background-image: none;*/
+/*  -webkit-box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%);*/
+/*  box-shadow: inset 0 3px 5px rgb(0 0 0 / 13%);*/
+/*}*/
+
+/*.btn:active,*/
+/*.btn:hover {*/
+/*  opacity: 0.85;*/
+/*  -moz-transition: all 1s;*/
+/*  -webkit-transition: all 1s;*/
+/*  transition: all 1s;*/
+/*}*/
+
+/*.btn.orange {*/
+/*  background-image: url(https://www.edgarcayce.org/images/orange-stripe.png);*/
+/*}*/
+
+/*.footer-top h2 {*/
+/*  color: #fff;*/
+/*  font-size: 20px;*/
+/*}*/
+
+/*.footer-top {*/
+/*  background: #0e2e60;*/
+/*  color: #fff;*/
+/*  padding-top: 50px;*/
+/*}*/
+
+/*.footer-bottom {*/
+/*  background: #061c3f;*/
+/*  padding-top: 15px;*/
+/*  padding-bottom: 15px;*/
+/*}*/
+
+/*.footer-wrapper:after,*/
+/*.footer-wrapper > div:after {*/
+/*  clear: both;*/
+/*}*/
+
+/*.footer-wrapper:before,*/
+/*.footer-wrapper:after,*/
+/*.footer-wrapper > div:before,*/
+/*.footer-wrapper > div:after {*/
+/*  content: " ";*/
+/*  display: table;*/
+/*}*/
+
+/*.footer-wrapper {*/
+/*  margin-right: auto;*/
+/*  margin-left: auto;*/
+/*  padding-left: 15px;*/
+/*  padding-right: 15px;*/
+/*  max-width: 100%;*/
+/*}*/
+
+/*.footer-wrapper > div {*/
+/*  margin-left: -15px;*/
+/*  margin-right: -15px;*/
+/*}*/
+
+/*.footer-top .footer-nav {*/
+/*  position: relative;*/
+/*  min-height: 1px;*/
+/*  padding-left: 15px;*/
+/*  padding-right: 15px;*/
+/*  margin-bottom: 40px;*/
+/*  overflow: hidden;*/
+/*}*/
+
+/*.footer-top h2 span:after,*/
+/*.footer-top h2 span:before {*/
+/*  border-top: solid 1px #19417e;*/
+/*  border-top: solid thin #19417e;*/
+/*}*/
+
+/*.footer-top .footer-nav .footer-nav-wrapper ul {*/
+/*  position: relative;*/
+/*  float: left;*/
+/*  width: 50%;*/
+/*  min-height: 1px;*/
+/*  padding-left: 15px;*/
+/*  padding-right: 15px;*/
+/*  list-style-type: none;*/
+/*  margin: 0;*/
+/*  padding: 0 0 0 10px;*/
+/*}*/
+
+/*.footer-top .footer-nav .footer-nav-wrapper ul li {*/
+/*  font-size: 14px;*/
+/*}*/
+
+/*.footer-top .footer-nav .footer-nav-wrapper ul li a {*/
+/*  color: #fff;*/
+/*}*/
+
+/*.footer-top .footer-nav .footer-nav-wrapper ul li:before {*/
+/*  content: "\f0da";*/
+/*  font-family: FontAwesome;*/
+/*  display: block;*/
+/*  position: relative;*/
+/*  max-width: 0;*/
+/*  max-height: 0;*/
+/*  left: -10px;*/
+/*}*/
+
+/*.footer-top .social {*/
+/*  position: relative;*/
+/*  min-height: 1px;*/
+/*  padding-left: 15px;*/
+/*  padding-right: 15px;*/
+/*  font-size: 12px;*/
+/*  text-align: center;*/
+/*  margin-bottom: 40px;*/
+/*}*/
+
+/*.footer-top .social .social-icons {*/
+/*  font-size: 18px;*/
+/*  padding: 0;*/
+/*  margin: 0;*/
+/*  list-style-type: none;*/
+/*}*/
+
+/*.footer-top .social .social-icons li {*/
+/*  display: inline-block;*/
+/*  width: 40px;*/
+/*  border-radius: 100%;*/
+/*  height: 40px;*/
+/*  line-height: 40px;*/
+/*  margin: 5px;*/
+/*}*/
+
+/*.footer-top .social .social-icons li a {*/
+/*  color: #fff;*/
+/*  display: block;*/
+/*}*/
+
+/*.footer-top .social .social-icons li.facebook {*/
+/*  background-color: #507bbe;*/
+/*}*/
+
+/*.footer-top .social .social-icons li.twitter {*/
+/*  background-color: #64ccef;*/
+/*}*/
+
+/*.footer-top .social .social-icons li.pinterest {*/
+/*  background-color: #dd3e60;*/
+/*}*/
+
+/*.footer-top .social .social-icons li.youtube {*/
+/*  background-color: #f2513b;*/
+/*}*/
+
+/*.footer-top .social .social-icons li.instagram {*/
+/*  background-color: #a236b7;*/
+/*}*/
+
+/*.footer-top .contact-information {*/
+/*  position: relative;*/
+/*  min-height: 1px;*/
+/*  padding-left: 15px;*/
+/*  padding-right: 15px;*/
+/*  text-align: right;*/
+/*  font-size: 14px;*/
+/*  line-height: 24px;*/
+/*  margin-bottom: 40px;*/
+/*}*/
+
+/*.footer-top .contact-information p {*/
+/*  font-size: 14px;*/
+/*  line-height: 24px;*/
+/*}*/
+
+/*.footer-top .footer-ctc {*/
+/*  text-align: center;*/
+/*  margin-bottom: 25px;*/
+/*}*/
+
+/*.footer-top .footer-ctc .btn {*/
+/*  max-width: 300px;*/
+/*  margin-bottom: 10px;*/
+/*  text-transform: none;*/
+/*  font-weight: 200;*/
+/*  font-family: Cantarell, sans-serif;*/
+/*}*/
+
+/*.footer-bottom .copyright-information {*/
+/*  position: relative;*/
+/*  float: left;*/
+/*  width: 100%;*/
+/*  min-height: 1px;*/
+/*  padding-left: 15px;*/
+/*  padding-right: 15px;*/
+/*  color: #6880a4;*/
+/*  text-align: center;*/
+/*  font-size: 12px;*/
+/*}*/
+
+/*@media (max-width: 1199px) {*/
+/*  .btn {*/
+/*    min-width: 0;*/
+/*    white-space: normal;*/
+/*  }*/
+/*}*/
+
+/*@media (max-width: 767px) {*/
+/*  .visible-xs {*/
+/*    display: block !important;*/
+/*  }*/
+/*}*/
+
+/*@media (min-width: 479px) {*/
+/*  .footer-top .footer-nav .footer-nav-wrapper ul li {*/
+/*    font-size: 14px;*/
+/*    margin: 11px;*/
+/*  }*/
+/*}*/
+
+/*@media (min-width: 768px) {*/
+/*  .footer-wrapper {*/
+/*    width: 750px;*/
+/*  }*/
+
+/*  h2 span:after,*/
+/*  h2 span:before {*/
+/*    max-width: calc(768px - 60px);*/
+/*  }*/
+/*}*/
+
+/*@media (min-width: 768px) and (max-width: 991px) {*/
+/*  .visible-sm {*/
+/*    display: block !important;*/
+/*  }*/
+/*}*/
+
+/*@media (min-width: 992px) {*/
+/*  .footer-wrapper {*/
+/*    width: 970px;*/
+/*  }*/
+
+/*  .footer-top .footer-nav {*/
+/*    float: left;*/
+/*    width: 33.33333333%;*/
+/*  }*/
+
+/*  .footer-top .social {*/
+/*    float: left;*/
+/*    width: 33.33333333%;*/
+/*  }*/
+
+/*  .footer-top .contact-information {*/
+/*    float: left;*/
+/*    width: 33.33333333%;*/
+/*  }*/
+
+/*  h2 span:after,*/
+/*  h2 span:before {*/
+/*    max-width: calc(992px - 60px);*/
+/*  }*/
+
+/*  .footer-top .social h2 span:after,*/
+/*  .footer-top .social h2 span:before {*/
+/*    border: none;*/
+/*  }*/
+/*}*/
+
+/*@media (min-width: 992px) and (max-width: 1199px) {*/
+/*  .visible-md {*/
+/*    display: block !important;*/
+/*  }*/
+/*}*/
+
+/*@media (min-width: 1200px) {*/
+/*  .footer-wrapper {*/
+/*    width: 1170px;*/
+/*  }*/
+
+/*  h2 span:after,*/
+/*  h2 span:before {*/
+/*    max-width: calc(1200px - 60px);*/
+/*  }*/
+
+/*  .visible-lg {*/
+/*    display: block !important;*/
+/*  }*/
+/*}*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+
+.footer-distributed {
+  background: #666;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: bold 16px sans-serif;
+  padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+  width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font: normal 36px 'Open Sans', cursive;
+  margin: 0;
+}
+
+.footer-distributed h3 span {
+  color: rgba(253, 165, 15, 0.95);
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-company-name {
+  color: #222;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer-distributed .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  font-weight: 400;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer-distributed .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer-distributed .footer-center p a {
+  color: lightseagreen;
+  text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight: 300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+  width: 20%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+
+}

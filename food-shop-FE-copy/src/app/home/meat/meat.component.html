@@ -1,0 +1,153 @@
+<!-----------------slide start------------------>
+<div class="row" style="overflow-y: hidden;padding-top:100px ">
+  <!-- Slider -->
+  <div id="slider">
+    <div class="slides">
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem
+              consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://cdn.britannica.com/17/196817-050-6A15DAC3/vegetables.jpg">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem
+              consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img src="https://ychef.files.bbci.co.uk/976x549/p04tx3m6.jpg">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem
+              consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img
+            src="https://www.iberdrola.com/documents/20125/39904/real_food_746x419.jpg/0c9185fa-b2dd-e1a6-602c-bca55f68e54e?t=1626673209445">
+        </div>
+      </div>
+      <div class="slider">
+        <div class="legend"></div>
+        <div class="content">
+          <div class="content-txt">
+            <h1>Lorem ipsum dolor</h1>
+            <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem
+              consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+          </div>
+        </div>
+        <div class="image">
+          <img
+            src="https://indochinalines.com/wp-content/uploads/2021/02/van-chuyen-hoa-qua-tu-ha-noi-di-ho-chi-minh.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="switch">
+      <ul>
+        <li>
+          <div class="on"></div>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-----------------slide end------------------>
+<div class="text-center pt-3">
+  <h1 class="text-danger">Sản Phẩm </h1>
+  <div class="pe-3 nav justify-content-end row">
+    <div class="col-lg-9 nav justify-content-start ps-5 select">
+      <a id="food-all" routerLink="/"><span>Tất cả</span></a>
+      <a id="vegetable" routerLink="/vegetable"><span class="ps-4">Rau củ</span></a>
+      <a id="meat" routerLink="/meat"><span class="ps-4">Thịt</span></a>
+      <a id="fruit" routerLink="/fruit"><span class="ps-4">Hoa quả</span></a>
+      <a id="other" routerLink="/other"><span class="ps-4">khác</span></a>
+    </div>
+    <div class="header__search d-flex my-2 col-lg-3">
+      <span class="header__search-input-wrap">
+          <input class="form-control" type="text" placeholder="Tìm kiếm thực phẩm.." aria-label="Search"
+                 [(ngModel)]="nameSearch">
+      </span>
+      <button class="btn btn-light btn-outline-warning" (click)="resetSearchInput()">
+        <i class="fa-solid fa-xmark ps-2 pe-2"></i></button>
+      <button class="btn btn-light btn-outline-primary" (click)="paginate(nameSearch,pageSize)">
+        <i class="fa-solid fa-magnifying-glass ps-3 pe-3"></i></button>
+    </div>
+  </div>
+  <hr>
+</div>
+<!----------------card start---------------------->
+<div *ngIf="!action">
+  <div class="wrapper">
+    <!-- MAIN -->
+    <div class="container" data-text="204">
+      <div class="title glitch" data-text="204">
+        204!
+      </div>
+      <div class="description glitch" data-text="SORRY, PRODUCT NOT EXITS !!!">
+        SORRY, PRODUCT NOT EXITS !!!
+      </div>
+    </div>
+    <!-- END MAIN -->
+  </div>
+</div>
+<div>
+  <div class="row mt-5 mb-5 nav justify-content-center" *ngIf="action">
+    <div class="container page-wrapper" style="width: 18rem;" *ngFor="let item of (foodList$ |async)">
+      <div class="page-inner">
+        <div class="row">
+          <div class="el-wrapper">
+            <div class="box-up">
+              <a routerLink="/detail/{{item.id}}">
+                <img class="img" src="{{item.image}}" height="250" width="200"  alt="">
+              </a>
+              <div class="img-info">
+                <div class="info-inner">
+                  <a class="p-name" routerLink="/detail/{{item.id}}"><b>{{item.name}}</b></a>
+                  <span class="p-company">{{item.manufacturing}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="box-down">
+              <div class="h-bg">
+                <div class="h-bg-inner"></div>
+              </div>
+              <a class="cart" (click)="addToCart(item)">
+                <div class="price">{{item.price | currency:'VND'}}</div>
+                <div class="add-to-cart">
+                  <div class="txt">Add in cart</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div style="margin-left: 700px">
+      <button class="btns btn-primary btn-card" *ngIf="pageSize <= (total$|async)" (click)="nextPage()">Xem thêm
+      </button>
+    </div>
+  </div>
+</div>
+<!------------------------card end----------------------->
+

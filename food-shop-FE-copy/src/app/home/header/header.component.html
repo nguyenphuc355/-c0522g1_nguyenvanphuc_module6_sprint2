@@ -1,0 +1,120 @@
+<nav>
+  <div class="wrapper pt-3">
+    <div class="logo">
+      <img src="assets/image/logo.png" height="120">
+      <a href="#" class="ps-3">PT<span class="text-warning">Food</span></a>
+    </div>
+    <input type="radio" name="slider" id="menu-btn">
+    <input type="radio" name="slider" id="close-btn">
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-border-style"
+             viewBox="0 0 16 16">
+          <path
+            d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm8 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm8 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-4-4a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-1z"/>
+        </svg>
+      </label>
+      <li><a href="#">Home</a></li>
+      <li>
+        <a routerLink="/product/history" class="desktop-item">Lịch sử mua hàng</a>
+        <input type="checkbox" id="showDrop">
+        <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+      </li>
+      <li>
+        <a href="#" class="desktop-item">Mega Menu</a>
+        <input type="checkbox" id="showMega">
+        <label for="showMega" class="mobile-item">Mega Menu</label>
+        <div class="mega-box">
+          <div class="content">
+            <div class="row">
+              <img src="assets/image/logo.png" alt="">
+            </div>
+            <div class="row">
+              <header>Design Services</header>
+              <ul class="mega-links">
+                <li><a href="#">Graphics</a></li>
+                <li><a href="#">Vectors</a></li>
+                <li><a href="#">Business cards</a></li>
+                <li><a href="#">Custom logo</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>Email Services</header>
+              <ul class="mega-links">
+                <li><a href="#">Personal Email</a></li>
+                <li><a href="#">Business Email</a></li>
+                <li><a href="#">Mobile Email</a></li>
+                <li><a href="#">Web Marketing</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>Security services</header>
+              <ul class="mega-links">
+                <li><a href="#">Site Seal</a></li>
+                <li><a href="#">VPS Hosting</a></li>
+                <li><a href="#">Privacy Seal</a></li>
+                <li><a href="#">Website design</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li><a routerLink="/login" class=" login" *ngIf="username==''">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="currentColor"
+             class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+                d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+          <path fill-rule="evenodd"
+                d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg>
+        <span class="mt-5 text-light"> Đăng Nhập</span></a>
+        <a *ngIf="username" style="text-decoration: none; color: orange;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+               class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+            <path
+              d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          </svg>
+          <span class="ps-2">{{username}}</span></a>
+      </li>
+      <li>
+        <button style="background:none; border: none">
+          <a (click)="whenLogout()" *ngIf="username!=''" class="text-primary register text-light ms-2">
+            Đăng Xuất
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="20" fill="currentColor" class="bi bi-door-closed"
+                 viewBox="0 0 16 16">
+              <path
+                d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
+              <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
+            </svg>
+          </a>
+        </button>
+      </li>
+      <li class="ms-3 bg-cart">
+        <a *ngIf="username!=''" routerLink="/product/cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
+               viewBox="0 0 16 16">
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+          Giỏ hàng
+        </a>
+        <a *ngIf="username==''" routerLink="/login">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
+               viewBox="0 0 16 16">
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+          </svg>
+          Giỏ hàng
+        </a>
+      </li>
+    </ul>
+    <label for="menu-btn" class="btn menu-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-border-width"
+           viewBox="0 0 16 16">
+        <path
+          d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </label>
+  </div>
+</nav>

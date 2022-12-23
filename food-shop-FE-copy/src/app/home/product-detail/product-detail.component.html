@@ -1,0 +1,16 @@
+
+<div style="padding-top: 110px;margin-bottom: 50px;font-family: 'Times New Roman',sans-serif">
+  <div id="master_container">
+    <div id="section-1" class="sections">
+      <div id="img-container"><img src="{{food.image}}"></div>
+    </div>
+    <div id="section-2" class="sections">
+      <p>Chi Tiết Sản Phẩm</p>
+      <div class="properties"><span>Tên Sản Phẩm:</span>{{food.name}}</div>
+      <div class="properties"><span>Xuất Xứ:</span> {{food.manufacturing}}</div>
+      <div class="properties"><span>Giá:</span> {{food.price}} VND</div>
+      <div class="properties"><span>Trạng Thái:</span> {{food.status}}</div>
+      <button class="addToCart" (click)="addToCart(food)">Thêm vào giỏ hàng</button>
+    </div>
+  </div>
+</div>
