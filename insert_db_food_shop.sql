@@ -1,4 +1,4 @@
- use food_shop_v3;
+ use food_shop_v2;
 
 insert into food(name,image,food_type_id,price)
 values
